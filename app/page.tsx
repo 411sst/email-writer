@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Copy, Check, Sparkles, Mail, MessageSquare, Moon, Sun, FileText, History, Upload, Trash2, Eye, Search, Filter, Calendar, User, Building, Heart, Clock } from 'lucide-react';
-
+import { Send, Copy, Check, Sparkles, Mail, MessageSquare, Moon, Sun, FileText, History, Trash2, Eye, Calendar, User, Building, Heart, Clock } from 'lucide-react';
 interface EmailHistoryItem {
   id: number;
   timestamp: Date;
