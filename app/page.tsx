@@ -575,6 +575,72 @@ Please respond with ONLY the email body content, no subject line, no additional 
                   </div>
                 </div>
               </div>
+              {/* Optional Email Context Section */}
+             <div className={`rounded-2xl shadow-lg border p-6 transition-colors duration-300 ${
+               darkMode 
+                 ? 'bg-slate-800 border-slate-700/50' 
+                 : 'bg-white border-gray-200/50'
+             }`}>
+               <div className="space-y-4">
+                 {/* Original Email */}
+                 <button
+                   onClick={() => setShowOriginalEmail(!showOriginalEmail)}
+                   className={`flex items-center space-x-2 transition-colors duration-300 ${
+                     darkMode 
+                       ? 'text-gray-300 hover:text-blue-400' 
+                       : 'text-gray-700 hover:text-blue-600'
+                   }`}
+                 >
+                   <Mail className="w-4 h-4" />
+                   <span className="font-medium">
+                     {showOriginalEmail ? 'Hide' : 'Add'} Original Email Context (Optional)
+                   </span>
+                 </button>
+                 
+                 {showOriginalEmail && (
+                   <textarea
+                     value={originalEmail}
+                     onChange={(e) => setOriginalEmail(e.target.value)}
+                     placeholder="Paste the original email you're responding to here..."
+                     className={`w-full h-32 p-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none transition-colors duration-300 ${
+                       darkMode 
+                         ? 'bg-slate-900 border-slate-600 text-white placeholder-gray-400' 
+                         : 'bg-white border-gray-200 text-gray-900 placeholder-gray-500'
+                     }`}
+                   />
+                 )}
+
+                 {/* Email Thread Context */}
+                 <button
+                   onClick={() => setShowEmailThread(!showEmailThread)}
+                   className={`flex items-center space-x-2 transition-colors duration-300 ${
+                     darkMode 
+                       ? 'text-gray-300 hover:text-blue-400' 
+                       : 'text-gray-700 hover:text-blue-600'
+                   }`}
+                 >
+                   <FileText className="w-4 h-4" />
+                   <span className="font-medium">
+                     {showEmailThread ? 'Hide' : 'Add'} Email Thread Context (Optional)
+                   </span>
+                 </button>
+                 
+                 {showEmailThread && (
+                   <div className="space-y-3">
+                     <textarea
+                       value={emailThread}
+                       onChange={(e) => setEmailThread(e.target.value)}
+                       placeholder="Paste your email conversation thread here for better context..."
+                       className={`w-full h-32 p-4 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none transition-colors duration-300 ${
+                         darkMode 
+                           ? 'bg-slate-900 border-slate-600 text-white placeholder-gray-400' 
+                           : 'bg-white border-gray-200 text-gray-900 placeholder-gray-500'
+                       }`}
+                     />
+                   </div>
+                 )}
+               </div>
+             </div>
 
               {/* Generate Button */}
               <button
